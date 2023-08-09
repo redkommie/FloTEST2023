@@ -1,0 +1,43 @@
+<div class="formulario" >
+  <form #fm="ngForm" (ngSubmit)="submitForm(fm)"  class="">
+    <input type="hidden" name="id" [(ngModel)]="SuscriptoresService.selectSub.id">
+    <div class="mb-4">
+      <label class="sr-only" for="inlineFormInputGroupUsername2">Nombre de Usuario</label>
+      <div class="input-group mb-2 mr-sm-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">@</div>
+        </div>
+        <input [(ngModel)]="SuscriptoresService.selectSub.user_id" name="user_id" class="form-control" id="user_id" type="text" placeholder="NOMBRE DE USUARIO" required>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label class="" for="fullName">
+        Nombre completo
+      </label>
+      <input [(ngModel)]="SuscriptoresService.selectSub.fullName" name="fullName" class="form-control" id="fullName" type="text" placeholder="NOMBRE COMPLETO"required>
+    </div>
+    <div class="mb-6">
+      <label class="" for="address">
+        Direccion
+      </label>
+      <input [(ngModel)]="SuscriptoresService.selectSub.address" name="address" class="form-control" id="address" type="text" placeholder="DIRECCION"required>
+    </div>
+    <div class="mb-6">
+        <label class="" for="email">
+          Email
+        </label>
+        <input [(ngModel)]="SuscriptoresService.selectSub.email" name="email" class="form-control" id="email" type="text" placeholder="EMAIL"required>
+      </div>
+      <!--<button type="submit" [disabled]="fm.invalid">Submit<button>
+        <div class="error" *ngIf="fm.hasError('Error')">
+        </div>-->
+    <div class="">
+      <button type="submit"  class="btn btn-success">
+        Guardar
+      </button>
+      <a routerLink="/" class="btn btn-md btn-danger">
+       Regresar
+      </a>
+    </div>
+  </form>
+</div>

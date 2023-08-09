@@ -1,0 +1,31 @@
+<div class="search-bar">
+    <label class="">
+      <input class="form-control" type="text" placeholder="FILTRAR" [(ngModel)]="searchInput">
+    </label>
+    <a routerLink="add-suscriptor"class="btn btn-md btn-dark" ><i class="bi bi-align-middle" style=" color: rgb(15, 219, 8);"></i></a>
+</div> 
+  <table class="table table-bordered table-striped table-hover" style="padding: 10px; margin-top: 20px;margin-bottom: 20px;" >
+    <thead >
+      <tr >
+        <td scope="col" class="">ID</td>
+        <td scope="col" class="">Nombre de Usuario</td>
+        <td scope="col" class="">Nombre Completo</td>
+        <td scope="col" class="">Direccion</td>
+        <td scope="col" class="">Correo</td>
+        <td scope="col" class="">Opciones</td>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let item of listaSubscriptores | search: searchInput" class="text-sm font-medium text-gray-900">
+        <td class="">{{item.id}}</td>
+        <td class="">{{item.fullName}}</td>
+        <td class="">{{item.user_id}}</td>
+        <td class="">{{item.address}}</td>
+        <td class="">{{item.email}}</td>
+        <td class="">
+          <button (click)="onEdit(item)" class="btn btn-sm btn-dark"><i class="bi-vector-pen" style=" color: rgb(236, 233, 26);"></i></button>
+          <button (click)="onDelete(item.id)" class="btn btn-sm btn-dark"><i class="bi-x-lg" style=" color: rgb(236, 33, 26);"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
